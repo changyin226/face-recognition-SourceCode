@@ -33,6 +33,7 @@ export default {
   },
   methods: {
     signOut() {
+      this.$bus.$emit('update:loading', true);
       const token = localStorage.getItem('token');
       const api = 'https://quiet-sea-49749.herokuapp.com/signout';
       this.$http.post(api, null, {
@@ -42,8 +43,10 @@ export default {
       }).then((res) => {
         localStorage.removeItem('token');
         this.$router.push({ name: 'SignIn' });
+        this.$bus.$emit('update:loading', false);
         this.$notify({ type: 'success', text: res.data });
       }).catch((err) => {
+        this.$bus.$emit('update:loading', false);
         this.$notify({ type: 'error', text: err.response.data });
       });
     },

@@ -136,7 +136,6 @@ export default {
           authorization: `Bearer ${token}`,
         },
       }).then((res) => {
-        console.log(res.data.outputs[0].data.regions);
         this.displayFaceBoxes(res.data.outputs[0].data.regions);
         const { id } = this.user;
         return this.$http.put('https://quiet-sea-49749.herokuapp.com/image', { id }, {
