@@ -23,7 +23,7 @@
         提供圖片網址，Magic Brain 將會為您偵測出現在圖片上的臉。
       </p>
       <div
-        class="form pa4 br3 shadow-5 center"
+        class="form pa4 br3 shadow-5 center flex"
       >
         <input
           v-model="imgUrl"
@@ -33,12 +33,12 @@
           @input="imgUrlChange"
         >
         <div
-          class="dib w-30"
+          class="w-30"
           :class="{ 'not-allowed': isNotAllowSubmit }"
         >
           <button
             type="button"
-            class="f4 w-100 link ph3 pv2 white bg-light-purple pointer"
+            class="f4 w-100 h-100 link ph3 pv2 white bg-light-purple pointer bn"
             @click="urlSubmit"
           >
             偵測
