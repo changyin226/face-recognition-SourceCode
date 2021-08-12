@@ -1,0 +1,20 @@
+.vue-notification-group .vue-notification-wrapper .vue-notification {
+  margin: 5px;
+  padding: 15px;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  
+  background: #44A4FC;
+  border-left: 5px solid #187FE7;
+
+  &.success {
+    background: #68CD86;
+    border-left-color: #42A85F;
+  }
+
+  &.error {
+    background: #E54D42;
+    border-left-color: #B82E24;
+  }
+}
