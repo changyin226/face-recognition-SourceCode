@@ -3,15 +3,14 @@
     v-if="user.name"
     class="home-page"
   >
-    <Tilt
-      class="tilt br2 shadow-2 ma4 mt0"
-      :options="tiltOption"
+    <div
+      class="brain-img br2 shadow-2 ma4 mt0"
     >
       <img
         src="../assets/image/brain.svg"
         alt="logo"
       >
-    </Tilt>
+    </div>
     <h1 class="white f3">
       {{ user.name }}, 您目前掃描得照片總數為...
     </h1>
@@ -69,12 +68,10 @@
 
 <script>
 /* eslint-disable max-len */
-import Tilt from 'vanilla-tilt-vue';
 import Box from '@/components/Box.vue';
 
 export default {
   components: {
-    Tilt,
     Box,
   },
   data() {
@@ -83,10 +80,6 @@ export default {
       imgUrl: '',
       isNotAllowSubmit: true,
       boxes: [],
-      tiltOption: {
-        max: 30,
-        glare: true,
-      },
     };
   },
   mounted() {
@@ -181,7 +174,7 @@ export default {
 <style lang="scss">
 .home-page{
   line-height: 1.5;
-  .tilt{
+  .brain-img{
     width: 175px;
     height: 175px;
     background: linear-gradient(90deg, #04C8DE, #FF5EDF);
